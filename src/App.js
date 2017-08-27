@@ -16,7 +16,7 @@ injectGlobal`
 
   h1, h2, h3, h4 {
     font-family: 'Paytone One', sans-serif;
-    color: #ff0000;
+    color: red;
   }
 `;
 
