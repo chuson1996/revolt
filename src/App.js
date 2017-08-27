@@ -119,8 +119,8 @@ class App extends Component {
               {({ rotateX, rotateY }) =>
                 <HeroImage
                   style={{
-                    transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1)`,
-                    WebkitTransform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1)`
+                    transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.2)`,
+                    WebkitTransform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.2)`
                   }}
                   alt="background"
                 />
