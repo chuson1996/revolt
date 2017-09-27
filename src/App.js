@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import { Motion, spring } from 'react-motion';
 import ReactAccelerometer from 'react-accelerometer';
+import media from './theme/media';
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Paytone+One');
@@ -12,11 +13,6 @@ injectGlobal`
     @media (max-width: 768px) {
       font-size: 20px;
     }
-  }
-
-  h1, h2, h3, h4 {
-    font-family: 'Paytone One', sans-serif;
-    color: red;
   }
 `;
 
@@ -41,16 +37,21 @@ const HeroImage = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url('${require('./assets/hero.jpg')}');
-  background-size: cover;
-  background-position: center;
-
+  background-image: url('${require('./assets/hero_background.jpg')}');
+  background-size: 120%;
+  background-position: 70% bottom;
   pointer-events: none;
   z-index: -1;
+  background-repeat: no-repeat;
+
+  ${media.tablet`
+    background-size: cover;
+    background-position: 60%;
+  `}
 `;
 
 const Revolt = styled.img`
-  height: 120px;
+  max-height: 240px;
   max-width: 80vw;
 `;
 
@@ -112,20 +113,16 @@ class App extends Component {
       <ReactAccelerometer>
         {(position, rotation) =>
           <Container onMouseMove={position ? null : this.onMouseMove}>
-            <Motion style={!position ? this.state.heroImage : {
+            <HeroImage
+              alt="background"
+            />
+            {/* <Motion style={!position ? this.state.heroImage : {
               // rotateX: spring(position.x / 10 * 5),
               // rotateY: spring(position.y / 10 * 5),
             }}>
               {({ rotateX, rotateY }) =>
-                <HeroImage
-                  style={{
-                    transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.2)`,
-                    WebkitTransform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.2)`
-                  }}
-                  alt="background"
-                />
               }
-            </Motion>
+            </Motion> */}
 
             <Motion style={!position ? this.state.revolt : {
               x: spring(position.x / 20 * 50),
@@ -139,11 +136,9 @@ class App extends Component {
                   }}
                 >
                   <Revolt
-                    src={require('./assets/revolt.svg')}
+                    src={require('./assets/revolt.png')}
                     alt="revolt"
                   />
-
-                  <h1>COMING SOON</h1>
                 </div>
               }
             </Motion>
