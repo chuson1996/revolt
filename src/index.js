@@ -5,7 +5,7 @@ import App from './App';
 import ForArtist from './containers/ForArtist/ForArtist';
 import registerServiceWorker from './registerServiceWorker';
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Route,
 } from 'react-router-dom';
 
