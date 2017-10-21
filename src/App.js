@@ -3,6 +3,7 @@ import styled, { injectGlobal } from 'styled-components';
 import { Motion, spring } from 'react-motion';
 import ReactAccelerometer from 'react-accelerometer';
 import media from './theme/media';
+import Menu from './components/Menu/Menu';
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Paytone+One');
@@ -56,95 +57,12 @@ const Revolt = styled.img`
 `;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      heroImage: {
-        rotateX: 0,
-        rotateY: 0
-      },
-      revolt: {
-        x: 0,
-        y: 0
-      }
-    }
-  }
-
-  onMouseMove = ({ clientX, clientY, x, y }) => {
-    const {
-      innerWidth: screenWidth,
-      innerHeight: screenHeight
-    } = window;
-
-    const leftPercent = x !== undefined ? x : ((clientX - screenWidth / 2) / screenWidth);
-    const topPercent = y !== undefined ? y : ((clientY - screenHeight / 2) / screenHeight);
-
-    this.setState({
-      heroImage: {
-        rotateX: spring(leftPercent * 5),
-        rotateY: spring(topPercent * 5)
-      },
-      revolt: {
-        x: spring(leftPercent * 50),
-        y: spring(topPercent * 50)
-      }
-    });
-  };
-
-  onTilt = ({ x, y }) => {
-    const leftPercent = x / 10;
-    const topPercent = y / 10;
-
-    this.setState({
-      heroImage: {
-        rotateX: spring(leftPercent * 5),
-        rotateY: spring(topPercent * 5)
-      },
-      revolt: {
-        x: spring(leftPercent * 50),
-        y: spring(topPercent * 50)
-      }
-    });
-  }
-
   render() {
     return (
-      <ReactAccelerometer>
-        {(position, rotation) =>
-          <Container onMouseMove={position ? null : this.onMouseMove}>
-            <HeroImage
-              alt="background"
-            />
-            {/* <Motion style={!position ? this.state.heroImage : {
-              // rotateX: spring(position.x / 10 * 5),
-              // rotateY: spring(position.y / 10 * 5),
-            }}>
-              {({ rotateX, rotateY }) =>
-              }
-            </Motion> */}
-
-            <Motion style={!position ? this.state.revolt : {
-              x: spring(position.x / 20 * 50),
-              y: spring(-position.y / 20 * 50)
-            }}>
-              {({ x, y }) =>
-                <div
-                  style={{
-                    transform: `translate(${x}%, ${y}%)`,
-                    textAlign: 'center'
-                  }}
-                >
-                  <Revolt
-                    src={require('./assets/revolt.png')}
-                    alt="revolt"
-                  />
-                </div>
-              }
-            </Motion>
-          </Container>
-        }
-      </ReactAccelerometer>
+      <div>
+        <Menu/>
+        Placeholder
+      </div>
     );
   }
 }

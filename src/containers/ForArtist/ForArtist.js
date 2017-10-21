@@ -101,7 +101,7 @@ export default function ForArtist({ artistName }) {
         Age: 28
       </p>
       <p>
-        Lead Visual Designer at Wärtsilä
+        Visual Designer at Wärtsilä
         <br/>
         Ex- Visual Designer at Brand Union (one of Europe’s largest branding agencies)
         <br/>
@@ -116,7 +116,7 @@ export default function ForArtist({ artistName }) {
       <FullWidthImg src={require('../../assets/yuchao-works.png')}/>
       <hr/>
 
-      <FullWidthImg src={require('../../assets/chuhoangson.jpg')}/>
+      <FullWidthImg src={require('../../assets/chuhoangson2.jpg')}/>
       <h3>Chu Hoang Son - <small>SoMe Warrior</small></h3>
       <p>
         Born in Hanoi, Vietnam <br/>

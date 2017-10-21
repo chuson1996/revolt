@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import ForArtist from './containers/ForArtist/ForArtist';
 import registerServiceWorker from './registerServiceWorker';
