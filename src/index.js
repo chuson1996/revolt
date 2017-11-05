@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import ForArtist from './containers/ForArtist/ForArtist';
+import App from 'containers/App/App';
+import ForArtist from 'containers/ForArtist/ForArtist';
 import registerServiceWorker from './registerServiceWorker';
+import 'theme/globalStyle';
 import {
     HashRouter as Router,
     Route,

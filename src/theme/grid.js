@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import media from './media';
+import mbMedia from './mobileFirstMedia';
 
 export const Div = styled.div`
     ${({ relative }) => relative && css`position: relative;`}
@@ -39,9 +40,14 @@ export const Div = styled.div`
             display: block;
         `}
     `}
+    ${({ hideInTablet }) => hideInTablet && css`
+        ${media.tablet`
+            display: none !important;
+        `}
+    `}
 `;
 
-export const Absolute = styled(Div)`
+export const Absolute = Div.extend`
     position: absolute;
     ${({ center, middle }) => (center && middle) && css`
         transform: translate(-50%, -50%);
@@ -90,4 +96,18 @@ export const Container = styled.div`
 
 export const Relative = styled(Div)`
     position: relative;
+`;
+
+export const MobileAndTabletOnly = styled(Div)`
+    display: none;
+    ${media.tablet`
+        display: block;
+    `}
+`;
+
+export const DesktopOnly = styled(Div)`
+    display: none;
+    ${mbMedia.btTablet`
+        display: block;
+    `}
 `;

@@ -1,7 +1,11 @@
 import React from 'react';
+import RevoltLogo from 'assets/revolt-logo.svg';
+import { MenuContainer, Logo } from './Menu.style';
 
 export default function Menu() {
   return (
-    <div>This is Menu</div>
+    <MenuContainer>
+      <Logo src={RevoltLogo} alt={'revolt logo'}/>
+    </MenuContainer>
   );
 }
