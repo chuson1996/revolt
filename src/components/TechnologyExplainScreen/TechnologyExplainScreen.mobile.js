@@ -8,6 +8,7 @@ import {
     Div,
 } from 'theme/grid';
 import { Explain, Container, ThumbnailImg, RevoltShoeOutsideImg, RevoltShoeBackImg } from './TechnologyExplainScreen.style';
+import { OverLogo } from 'components/Menu/Menu';
 
 class ShoeImagePicker extends React.Component {
   images = [
@@ -61,7 +62,8 @@ class ShoeImagePicker extends React.Component {
 
 export default function TechnologyExplainScreen() {
   return (
-    <Container>
+    <Container relative>
+      <OverLogo/>
       <ShoeImagePicker/>
 
       <Explain>

@@ -4,10 +4,12 @@ import { Img } from 'theme/image';
 import teamPhotoSrc from 'assets/team-photo.jpg';
 import blueRibbonSrc from 'assets/blue-ribbon.png';
 import redRibbonSrc from 'assets/red-ribbon.png';
+import { OverLogo } from 'components/Menu/Menu';
 
 export default function TeamPhotoScreen(props) {
   return (
-    <Container>
+    <Container relative>
+      <OverLogo hideInMobileAndTablet/>
       <GreyWall src={require('assets/grey-wall.jpg')} alt={'grey wall'}/>
       <PictureHolder>
         <Img

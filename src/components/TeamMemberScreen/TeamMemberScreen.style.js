@@ -3,7 +3,7 @@ import { Div } from 'theme/grid';
 import { green } from 'theme/variables';
 import mbMedia from 'theme/mobileFirstMedia';
 
-export const Container = styled.div`
+export const Container = styled(Div)`
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 4rem;

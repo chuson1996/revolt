@@ -5,7 +5,12 @@ import mbMedia from 'theme/mobileFirstMedia';
 
 
 export const Container = styled(Screen)`
-  padding-top: 30px;
+  padding-top: 10rem;
+  padding-bottom: 50px;
+  position: relative;
+  ${mbMedia.btTablet`
+    padding-bottom: 17rem;
+  `}
 `;
 
 export const Explain = styled(Div)`

@@ -5,11 +5,7 @@ import mbMedia from 'theme/mobileFirstMedia';
 import media from 'theme/media';
 
 export const Container = styled(Div)`
-  margin-top: 50px;
   position: relative;
-  ${mbMedia.btTablet`
-    margin-top: 17rem;
-  `}
 `;
 
 export const BlueRibbon = styled(Img)`

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Flex } from 'theme/grid';
 import { Container, MemberContainer, RevoltMembersDiv, AdvisorsDiv, CTA, MemberGroups, Name, Nickname, Role } from './TeamMemberScreen.style';
+import { OverLogo } from 'components/Menu/Menu';
 
 export default function TeamMemberScreen(props) {
   return (
-    <Container>
+    <Container relative>
+      <OverLogo/>
       <Flex row>
         <CTA>
           {`Let's meet our team.`}
@@ -23,9 +25,9 @@ export default function TeamMemberScreen(props) {
           </AdvisorsDiv>
           <RevoltMembersDiv>
             <MemberContainer>
-              <Name>Chu Hoang Son</Name>
-              <Nickname>SoMe Warrior</Nickname>
-              <Role>Web Developer/ Marketer</Role>
+              <Name>Yu Chao</Name>
+              <Nickname>Hand of the brand</Nickname>
+              <Role>Visual Designer</Role>
             </MemberContainer>
             <MemberContainer>
               <Name>Jesse Tran</Name>
@@ -33,9 +35,9 @@ export default function TeamMemberScreen(props) {
               <Role>Serial Entrepreneur</Role>
             </MemberContainer>
             <MemberContainer>
-              <Name>Yu Chao</Name>
-              <Nickname>Hand of the brand</Nickname>
-              <Role>Visual Designer</Role>
+              <Name>Chu Hoang Son</Name>
+              <Nickname>SoMe Warrior</Nickname>
+              <Role>Web Developer/ Marketer</Role>
             </MemberContainer>
           </RevoltMembersDiv>
         </MemberGroups>
