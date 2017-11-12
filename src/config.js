@@ -1,0 +1,3 @@
+module.exports = {
+  MAILCHIMP_TOKEN: '029b7445fe876432146a04d591f28c48-us15'
+};

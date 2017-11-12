@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Menu from 'components/Menu/Menu';
 import PlayButton from 'components/PlayButton/PlayButton';
 import { Screen1, Screen2, RevoltTextSmLogo, Hr, NewsletterCTAScreen, RevoltTextLongLogo, SubHeadlineDiv, VerticalHr } from './App.style';
-import { InputGroup } from 'theme/form';
 import { Div, Flex } from 'theme/grid';
 import revoltTextLogoSrc from 'assets/revolt-text-logo.svg';
 import revoltTextLongLogoSrc from 'assets/revolt-text-long-logo.svg';
-import { OwnYourDifferenceCTAScreen, TechnologyExplainScreen, TeamPhotoScreen, TeamMemberScreen } from 'components';
+import { OwnYourDifferenceCTAScreen, TechnologyExplainScreen, TeamPhotoScreen, TeamMemberScreen, EmailSubscription } from 'components';
+
 
 class App extends Component {
   render() {
@@ -20,18 +20,19 @@ class App extends Component {
           <h2 className="balance-text">Artist-designed sneakers made from recycled materials.</h2>
 
           <SubHeadlineDiv>
-            <p>
-              <b>BE THE FIRST</b>
-              <br/>
-              <small>
-                Get the latest news on our development, styles and EXCLUSIVE offers straight to your email.
-              </small>
-            </p>
-
-            <InputGroup marginTop="25px">
-              <input type="email" placeholder={'Email'}/>
-              <button><b>SUBSCRIBE</b></button>
-            </InputGroup>
+            <EmailSubscription
+              cta={'SUBSCRIBE'}
+              title={
+                <p>
+                  <b>BE THE FIRST</b>
+                  <br/>
+                  <small>
+                    Get the latest news on our development, styles and EXCLUSIVE offers straight to your email.
+                  </small>
+                </p>
+              }
+              thankYouMessage={'Thank you for subscribing!'}
+            />
           </SubHeadlineDiv>
         </Screen1>
 
@@ -62,10 +63,10 @@ class App extends Component {
         <NewsletterCTAScreen>
           <h1 className="balance-text">Join the movement.</h1>
           <p>Subscribe to our newsletter.</p>
-          <InputGroup marginTop="25px">
-            <input type="email" placeholder={'Email'}/>
-            <button>Subscribe</button>
-          </InputGroup>          
+          <EmailSubscription
+            cta={'SUBSCRIBE'}
+            thankYouMessage={'Thank you for subscribing!'}
+          />
         </NewsletterCTAScreen>
       </Div>
     );

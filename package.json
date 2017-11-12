@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.2",
+    "axios": "^0.17.0",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -26,6 +27,7 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "micro": "^9.0.1",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
@@ -39,6 +41,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-zoomy": "^1.1.1",
+    "recompose": "^0.26.0",
     "style-loader": "0.18.2",
     "styled-components": "^2.1.2",
     "sw-precache-webpack-plugin": "0.11.4",
@@ -52,7 +55,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "start-server": "./node_modules/micro/bin/micro.js -p 3001 src/server.js"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, OwnYourDifferenceImg } from './OwnYourDifferenceCTAScreen.style';
-import { InputGroup } from 'theme/form';
 import ownYourDifferenceSrc from 'assets/ownyourdifference.png';
+import { EmailSubscription } from 'components';
 
 export default function OwnYourDifferenceCTAScreen() {
   return (
@@ -12,12 +12,13 @@ export default function OwnYourDifferenceCTAScreen() {
         src={ownYourDifferenceSrc}
         alt={'Own your difference'}/>
 
-      <h2 className="balance-text">Become our partner artist</h2>
-      <InputGroup marginTop="25px">
-        <input type="email" placeholder={'Email'}/>
-        <button>Partner Up</button>
-      </InputGroup>
-      <p>The world & Revolt value your talent.</p>
+      <EmailSubscription
+        title={'Become our partner artist'}
+        cta={'Partner Up'}
+        subtitle={'The world & Revolt value your talent.'}
+        category={'artist'}
+        thankYouMessage={'Thank you for signing up. We will contact you really soon!'}
+      />
     </Container>
   );
 }
